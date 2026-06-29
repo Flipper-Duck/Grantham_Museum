@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arrange a School Visit — Grantham Museum</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,Helvetica,sans-serif;background:#f0ede6;color:#222;}
+.wrapper{max-width:620px;margin:0 auto;background:#fff;}
+.logo-bar{background:#fff;padding:14px 24px;border-bottom:3px solid #9DAE47;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.hdr{background:#5F6E28;padding:18px 28px;}
+.hdr h1{color:#fff;font-size:19px;}
+.hdr p{color:#dce6a0;font-size:12px;margin-top:3px;}
+.sub-bar{background:#9DAE47;padding:10px 28px;}
+.sub-bar p{color:#fff;font-size:14px;font-weight:bold;}
+.form-body{padding:26px 30px;}
+.intro{font-size:14px;color:#555;line-height:1.65;margin-bottom:22px;}
+.panel{background:#F1F4E1;border-left:4px solid #9DAE47;padding:14px 16px;margin-bottom:20px;border-radius:0 4px 4px 0;}
+.panel-title{font-size:13px;color:#3a4a10;font-weight:bold;margin-bottom:12px;}
+.field{margin-bottom:14px;}
+.field:last-child{margin-bottom:0;}
+label{display:block;font-size:13px;font-weight:bold;color:#3a4a10;margin-bottom:5px;}
+.req{color:#c00;}
+input,select,textarea{width:100%;padding:10px 12px;border:1.5px solid #c8d080;border-radius:4px;font-size:14px;color:#222;font-family:Arial,sans-serif;background:#fafff0;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#9DAE47;background:#fff;}
+textarea{height:80px;resize:vertical;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.btn{display:block;width:100%;background:#9DAE47;color:#fff;font-size:16px;font-weight:bold;padding:14px;border:none;border-radius:5px;cursor:pointer;margin-top:8px;font-family:Arial,sans-serif;}
+.btn:hover{background:#5F6E28;}
+.btn:disabled{background:#aaa;cursor:not-allowed;}
+.note{font-size:12px;color:#888;margin-top:12px;line-height:1.6;}
+.success{display:none;background:#F1F4E1;border:2px solid #9DAE47;border-radius:6px;padding:28px;text-align:center;margin-top:20px;}
+.success h2{color:#5F6E28;font-size:20px;margin-bottom:10px;}
+.success p{color:#444;font-size:14px;line-height:1.7;}
+.error-msg{display:none;background:#fff0f0;border:1.5px solid #c00;border-radius:4px;padding:12px 16px;margin-top:12px;font-size:13px;color:#900;line-height:1.5;}
+footer{background:#f0ede6;border-top:3px solid #9DAE47;padding:14px 24px;text-align:center;}
+footer p{font-size:11px;color:#888;line-height:1.6;}
+@media(max-width:480px){.two{grid-template-columns:1fr;}.form-body{padding:18px 14px;}}
+
+.what{background:#2c3d08;border-radius:6px;padding:16px 20px;margin-bottom:22px;}
+.what h3{color:#dce8a0;font-size:14px;margin-bottom:10px;}
+.what ul{list-style:none;padding:0;}
+.what li{color:#d0e090;font-size:13px;padding:4px 0 4px 18px;position:relative;}
+.what li:before{content:"✓";color:#9DAE47;position:absolute;left:0;}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="logo-bar">
+  <img src="data:image/jpeg;base64,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" alt="Grantham Museum" style="display:block;max-width:100%;height:54px;width:auto;">
+  <img src="data:image/jpeg;base64,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" alt="Heritage Fund" style="display:block;max-width:100%;height:54px;width:auto;">
+</div>
+  <div class="hdr">
+    <h1>Arrange a School Visit</h1>
+    <p>Grantham Museum · St Peter's Hill, Grantham · 01476 568783</p>
+  </div>
+  <div class="sub-bar"><p>🏛️ Complete the form below and we will be in touch within two working days.</p></div>
+  <div class="form-body">
+    <p class="intro">Bring your class to Grantham Museum and discover the real thing. We are housed in a beautiful 1926 Carnegie Library building right in the heart of Grantham. Admission is free — the only cost to your school is transport.</p>
+
+    <div class="what">
+      <h3>What your class will experience</h3>
+      <ul>
+        <li>Discover Grantham's greats — Isaac Newton, Margaret Thatcher, and Edith Smith, Britain's first female police officer with powers of arrest</li>
+        <li>Explore original objects and artefacts from across history in a genuine museum setting</li>
+        <li>See the 1950s Grantham scale model and the historic apothecary shop</li>
+        <li>Step inside a genuine 1926 Carnegie Library building</li>
+        <li>Free admission for all — only transport to cover</li>
+        <li>Accessible building with step-free routes and facilities</li>
+      </ul>
+    </div>
+
+    <form id="visitForm">
+
+      <div class="panel">
+        <p class="panel-title">Your contact details</p>
+        <div class="two" style="margin-bottom:14px;">
+          <div class="field"><label>First name <span class="req">*</span></label><input type="text" name="first_name" required placeholder="First name"></div>
+          <div class="field"><label>Last name <span class="req">*</span></label><input type="text" name="last_name" required placeholder="Last name"></div>
+        </div>
+        <div class="field"><label>Job title / role <span class="req">*</span></label><input type="text" name="role" required placeholder="e.g. Year 4 teacher, Trip coordinator"></div>
+        <div class="two">
+          <div class="field"><label>Email address <span class="req">*</span></label><input type="email" name="email" required placeholder="your@email.com"></div>
+          <div class="field"><label>Phone number <span class="req">*</span></label><input type="tel" name="phone" required placeholder="Best number to call"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p class="panel-title">Your school or group</p>
+        <div class="field"><label>School / organisation name <span class="req">*</span></label><input type="text" name="organisation" required placeholder="Full school or group name"></div>
+        <div class="two">
+          <div class="field"><label>Town / city <span class="req">*</span></label><input type="text" name="town" required placeholder="Where are you based?"></div>
+          <div class="field"><label>Postcode</label><input type="text" name="postcode" placeholder="School postcode"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p class="panel-title">Visit details</p>
+        <div class="two" style="margin-bottom:14px;">
+          <div class="field"><label>Year group(s) <span class="req">*</span></label><input type="text" name="year_group" required placeholder="e.g. Year 3 and 4"></div>
+          <div class="field"><label>Number of pupils <span class="req">*</span></label><input type="number" name="pupils" required placeholder="e.g. 30" min="1"></div>
+        </div>
+        <div class="field" style="margin-bottom:14px;"><label>Number of accompanying adults</label><input type="number" name="adults" placeholder="e.g. 4" min="1"></div>
+        <div class="field" style="margin-bottom:14px;"><label>Preferred visit date(s) <span class="req">*</span></label><input type="text" name="preferred_dates" required placeholder="e.g. any Thursday in October, or specific dates"></div>
+        <div class="field"><label>History topic or area of interest</label><input type="text" name="topic" placeholder="e.g. Ancient Egypt, WW2, Local History, Pioneers"></div>
+      </div>
+
+      <div class="field"><label>Accessibility requirements or anything else we should know</label>
+        <textarea name="notes" placeholder="Wheelchair access needs, sensory requirements, or any other information that will help us plan your visit"></textarea>
+      </div>
+
+      <div class="field"><label>Have you used a Grantham Museum loan box before?</label>
+        <select name="loan_box_user">
+          <option value="">— Please select —</option>
+          <option>Yes, we have used a loan box</option>
+          <option>No, but we are interested</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <button class="btn" type="submit">Send my school visit request →</button>
+      <div class="error-msg" id="errMsg">Sorry, something went wrong. Please email us directly at <a href="mailto:info@granthammuseum.org.uk">info@granthammuseum.org.uk</a> or call 01476 568783.</div>
+      <p class="note">We will reply within two working days to confirm availability and discuss your visit. Grantham Museum is open Thursday to Sunday, 10:00 to 16:00.</p>
+    </form>
+
+    <div class="success" id="successBlock">
+      <h2>✓ Request received!</h2>
+      <p>Thank you — we will be in touch within two working days to confirm your visit.<br><br>
+      <strong>Grantham Museum</strong><br>
+      01476 568783 · info@granthammuseum.org.uk<br><br>
+      St Peter's Hill, Grantham NG31 6PY · Thursday to Sunday, 10:00 to 16:00</p>
+    </div>
+  </div>
+  <footer><p>Grantham Museum · St Peter's Hill, Grantham NG31 6PY · Open Thu to Sun 10:00–16:00<br>
+Made possible with The National Lottery Heritage Fund. Thanks to National Lottery players.</p></footer>
+</div>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx65XurgL1Cf-w6oh0BuwmmqNlsJjg1D0J9-aInQwkLuYQ1NMzq0c3nw5LWc96Ezs8ehQ/exec';
+
+document.getElementById('visitForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = this;
+  const btn = form.querySelector('.btn');
+  const errEl = document.getElementById('errMsg');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  errEl.style.display = 'none';
+
+  const data = new FormData(form);
+  data.append('form_type', 'school_visit_booking');
+  data.append('recipient', 'info@granthammuseum.org.uk');
+
+  // Build email body for Apps Script to send
+  const fields = Object.fromEntries(data);
+  const lines = Object.entries(fields)
+    .filter(([k]) => !['form_type','recipient'].includes(k))
+    .map(([k,v]) => k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()) + ': ' + (v||'—'))
+    .join('\n');
+  data.append('email_body', lines);
+
+  // Hidden iframe POST — same technique as volunteer form
+  const iframe = document.createElement('iframe');
+  iframe.name = 'submit_frame_school_visit_booking';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+
+  const hidden = document.createElement('form');
+  hidden.method = 'POST';
+  hidden.action = SCRIPT_URL;
+  hidden.target = iframe.name;
+  hidden.style.display = 'none';
+
+  for (const [k,v] of data) {
+    const inp = document.createElement('input');
+    inp.type = 'hidden'; inp.name = k; inp.value = v;
+    hidden.appendChild(inp);
+  }
+  document.body.appendChild(hidden);
+
+  iframe.onload = function() {
+    form.style.display = 'none';
+    document.getElementById('successBlock').style.display = 'block';
+    document.body.removeChild(hidden);
+  };
+
+  // Fallback timeout in case iframe onload doesn't fire (CORS)
+  setTimeout(function() {
+    if (form.style.display !== 'none') {
+      form.style.display = 'none';
+      document.getElementById('successBlock').style.display = 'block';
+    }
+    try { document.body.removeChild(hidden); } catch(e) {}
+  }, 4000);
+
+  hidden.submit();
+});
+</script>
+</body>
+</html>
